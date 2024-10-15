@@ -1,16 +1,32 @@
-import MoviesData from "./movies-data.js";
+import { getMovies } from "./movies.services.js";
+import { CardTemplate } from "./movies.template.js";
 
-function createCard() {}
+const cardContainer = document.querySelector(".movies-container");
+const cardByGenreContainer = document.querySelector(".movies-by-genre")
 
-async function getMovies() {
-  try {
-    const movies = MoviesData.map((movie) => movie);
-    if (!movies) {
-      return;
-    }
-    console.log(movies);
-    return movies;
-  } catch (error) {
-    throw new error(error);
-  }
+
+
+
+function renderCard() {
+	const cards = getMovies();
+	cards.map((card) => {
+		console.log(card.title, card.poster)
+		const cardTemplate = CardTemplate(card.title, card.poster);
+		const tempDiv = document.createElement("div");
+		tempDiv.innerHTML = cardTemplate;
+
+		cardContainer.appendChild(tempDiv.firstElementChild);
+	});
 }
+renderCard();
+
+
+function renderMoviesByGenre(){
+  const cards = getMovies()
+  cards.map((card) => {
+		
+	});
+}
+
+
+
