@@ -11,9 +11,23 @@ function getMovies() {
 		throw new error(error);
 	}
 }
+
+function getTitles(){
+  try {
+      const genres = MoviesData.map(card => card.genre)
+      const titles = [...new Set(genres.flat())]
+      if(!titles){
+        return
+      }
+      return titles
+  } catch (error) {
+    throw new Error(error)
+  }
+}
  function filterMoviesByGenre(genre){
   try {
-      const movie = MoviesData.filter(card => card.genre === genre)
+      const movie = MoviesData.filter(card => card.genre.includes(genre))
+      console.log(movie)
       if(!movie){
         return
       }
@@ -24,6 +38,9 @@ function getMovies() {
 }
  function deleteMovie() {}
 export {
-    deleteMovie, filterMoviesByGenre, getMovies
+  deleteMovie,
+  filterMoviesByGenre,
+  getMovies,
+  getTitles
 };
 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/icons/Entertainment.svg"
+      type="image/x-icon"
+    />
+    <!--Fuentes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <title>Pantalla Gaucha</title>
+  </head>
+  <body>
+      <nav>
+        <h1 class="title">Pantalla Gaucha</h1>
+          <div class="links-container">
+            <ul class="links">
+              <li><a href="/" target="_blank">Inicio</a></li>
+              <li><a href="./pages/series.html" target="_blank">Series</a></li>
+              <li><a href="./pages/movies.html" target="_blank">Películas</a></li>
+            </ul>
+        </div>
+        <div class="items-container">
+         
+          <a href="" target="_blank" class="create-movie">Crear Pelicula</a>
+        </div>
+      </nav>
+
+    <main>
+      <section class="hero">
+        <figure></figure>
+      </section>
+      <section class="movies-recommended">
+        <h2>Recomendados</h2>
+        <div class="movies-container">
+            <!--Movies -->
+        </div>
+      </section>
+      <section class="movies-by-genre">
+        <!--Movies by genre-->
+      </section>
+    </main>
+
+    <script type="module" src="./scripts/movies-data.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
+  </body>
+</html>
