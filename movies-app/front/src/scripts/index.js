@@ -1,6 +1,6 @@
 import { getMovies, getTitles } from "./movies.services.js";
 import { CardTemplate } from "./movies.template.js";
-
+import { addCardToContainer } from "./utils.js";
 const cardContainer = document.querySelector(".movies-container");
 const cardByGenreContainer = document.querySelector(".movies-by-genre");
 
@@ -10,11 +10,11 @@ const cardByGenreContainer = document.querySelector(".movies-by-genre");
 function renderCard() {
 	const cards = getMovies();
 	cards.forEach((card) => {
-		const cardTemplateHTML = CardTemplate(card.title, card.poster);
-		const tempDiv = document.createElement("div");
-		tempDiv.innerHTML = cardTemplateHTML;
-
-		cardContainer.appendChild(tempDiv.firstElementChild);
+		if(card){
+			addCardToContainer(cardContainer, CardTemplate(card.title, card.poster))
+		}else{
+			return // skeleton
+		}
 	});
 }
 renderCard();
@@ -22,6 +22,7 @@ renderCard();
 function renderMoviesByGenre() {
 	const cards = getMovies();
 	const titles = getTitles()
+	//Titles = Genres
 	titles.forEach((title) => {
 		const titleElement = document.createElement("h3")
 		const divContainer = document.createElement("div")
@@ -34,17 +35,12 @@ function renderMoviesByGenre() {
 
 		cards.forEach(e => {
 			if(e.genre.includes(title)){
-				const cardTemplateHTML = CardTemplate(e.title, e.poster);
-				const tempDiv = document.createElement("div");
-				tempDiv.innerHTML = cardTemplateHTML;
-		
-				divContainer.appendChild(tempDiv.firstElementChild);
+				 addCardToContainer(divContainer, CardTemplate(e.title, e.poster))
 			}else{
-				return
+				return //skeleeton
 			}
 		})
-
-
 	});
 }
 renderMoviesByGenre();
+

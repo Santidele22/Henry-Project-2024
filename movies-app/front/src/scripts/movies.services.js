@@ -14,9 +14,9 @@ function getMovies() {
 
 function getTitles(){
   try {
-      const genres = MoviesData.map(card => card.genre)
+     const genres = MoviesData.map(card => card.genre)
       const titles = [...new Set(genres.flat())]
-      if(!titles){
+      if(!titles){ 
         return
       }
       return titles
