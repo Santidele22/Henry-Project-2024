@@ -7,4 +7,3 @@ export function CardTemplate(title, poster) {
       </article> 
       `;
 }
-

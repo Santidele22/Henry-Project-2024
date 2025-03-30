@@ -1,0 +1,84 @@
+:root {
+  --font-size-h1: 1.476rem;
+  --font-size-h2: 1.383rem;
+  --font-size-h3: 1.296rem;
+  --font-size-h4: 1.215rem;
+  --font-size-h5: 1.138rem;
+  --font-size-h6: 1.067rem;
+  --font-size-p: 1rem;
+  --font-size-small: 0.937rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  line-height: normal;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*Headings*/
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+}
+
+h5 {
+  font-size: var(--font-size-h5);
+}
+
+h6 {
+  font-size: var(--font-size-h6);
+}
+
+p {
+  font-size: var(--font-size-p);
+}
+
+small {
+  font-size: var(--font-size-small);
+}
